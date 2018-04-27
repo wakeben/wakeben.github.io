@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="运维菜鸟">
 <meta property="og:description" content="开启站内搜索功能NexT 支持集成 Swiftype、 微搜索、Local Search 和 Algolia，各种搜索配置官方文档均有说明，但是尝试了一下只有本地搜索用着比较顺手 配置也简单，如下： 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令： 1npm install hexo-generator-searchdb --save">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-27T09:13:22.874Z">
+<meta property="og:updated_time" content="2018-04-27T09:42:33.593Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo配置">
 <meta name="twitter:description" content="开启站内搜索功能NexT 支持集成 Swiftype、 微搜索、Local Search 和 Algolia，各种搜索配置官方文档均有说明，但是尝试了一下只有本地搜索用着比较顺手 配置也简单，如下： 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令： 1npm install hexo-generator-searchdb --save">
@@ -105,7 +105,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -365,6 +365,39 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,203
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
 
           
 
@@ -425,6 +458,17 @@
 <hr>
 <h2 id="修改底部-号标签"><a href="#修改底部-号标签" class="headerlink" title="修改底部#号标签"></a>修改底部#号标签</h2><p> 效果      #      →      <i class="fa fa-tag"></i><br>打开/themes/next/layout/_macro/post.swig </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rel=<span class="string">"tag"</span>&gt;<span class="comment">#       \\搜索rel="tag"&gt;#  将 # 换成 &lt;i class="fa fa-tag"&gt;&lt;/i&gt;</span></span><br><span class="line"></span><br><span class="line">rel=<span class="string">"tag"</span>&gt;&lt;i class=<span class="string">"fa fa-tag"</span>&gt;&lt;/i&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="next的样式选择"><a href="#next的样式选择" class="headerlink" title="next的样式选择"></a>next的样式选择</h2><p>next的样式其实有三种：Muse、Mist和Pisces，步骤2中看到的其实是next默认的模式Muse，根据官方说明三个样式的特点如下：</p>
+<pre><code>Muse： 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白
+Mist： Muse 的紧凑版本，整洁有序的单栏外观
+Pisces： 双栏 Scheme，小家碧玉似的清新
+</code></pre><p>打开\themes\next_config.yml  搜索 Scheme Settings 字段</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Scheme Settings</span></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line">scheme: Mist</span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="comment">#scheme: Gemini</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="添加文章统计功能"><a href="#添加文章统计功能" class="headerlink" title="添加文章统计功能"></a>添加文章统计功能</h2><p>在根目录下安装 hexo-wordcount 插件,运行下列命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-wordcount --save</span><br></pre></td></tr></table></figure></p>
+<p>打开next主题配置文档 \themes\next_config.yml,搜索Post wordcount 字段，修改参数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/willin/hexo-wordcount</span></span><br><span class="line">post_wordcount:</span><br><span class="line">  item_text: <span class="literal">true</span></span><br><span class="line">  wordcount: <span class="literal">true</span></span><br><span class="line">  min2read: <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     <div>    
@@ -630,7 +674,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开启站内搜索功能"><span class="nav-number">1.</span> <span class="nav-text">开启站内搜索功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示摘要和阅读全文按钮"><span class="nav-number">2.</span> <span class="nav-text">显示摘要和阅读全文按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#站点建立时间"><span class="nav-number">3.</span> <span class="nav-text">站点建立时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置「动画效果」"><span class="nav-number">4.</span> <span class="nav-text">设置「动画效果」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码高亮主题"><span class="nav-number">5.</span> <span class="nav-text">代码高亮主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章插入本地图片"><span class="nav-number">6.</span> <span class="nav-text">文章插入本地图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加版权声明模块"><span class="nav-number">7.</span> <span class="nav-text">添加版权声明模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改底部-号标签"><span class="nav-number">8.</span> <span class="nav-text">修改底部#号标签</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开启站内搜索功能"><span class="nav-number">1.</span> <span class="nav-text">开启站内搜索功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示摘要和阅读全文按钮"><span class="nav-number">2.</span> <span class="nav-text">显示摘要和阅读全文按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#站点建立时间"><span class="nav-number">3.</span> <span class="nav-text">站点建立时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置「动画效果」"><span class="nav-number">4.</span> <span class="nav-text">设置「动画效果」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码高亮主题"><span class="nav-number">5.</span> <span class="nav-text">代码高亮主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章插入本地图片"><span class="nav-number">6.</span> <span class="nav-text">文章插入本地图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加版权声明模块"><span class="nav-number">7.</span> <span class="nav-text">添加版权声明模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改底部-号标签"><span class="nav-number">8.</span> <span class="nav-text">修改底部#号标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next的样式选择"><span class="nav-number">9.</span> <span class="nav-text">next的样式选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加文章统计功能"><span class="nav-number">10.</span> <span class="nav-text">添加文章统计功能</span></a></li></ol></div>
             
 
           </div>
@@ -674,7 +718,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -773,13 +817,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
