@@ -197,3 +197,44 @@ rel="tag">#       \\搜索rel="tag">#  将 # 换成 <i class="fa fa-tag"></i>
 
 rel="tag"><i class="fa fa-tag"></i> 
 ```
+
+----------------------------------------------
+## next的样式选择
+next的样式其实有三种：Muse、Mist和Pisces，步骤2中看到的其实是next默认的模式Muse，根据官方说明三个样式的特点如下：
+
+    Muse： 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白
+    Mist： Muse 的紧凑版本，整洁有序的单栏外观
+    Pisces： 双栏 Scheme，小家碧玉似的清新
+
+打开\themes\next\_config.yml  搜索 Scheme Settings 字段
+
+``` bash
+# ---------------------------------------------------------------
+# Scheme Settings
+# ---------------------------------------------------------------
+
+# Schemes
+#scheme: Pisces
+scheme: Mist
+#scheme: Pisces
+#scheme: Gemini
+```
+
+----------------------------------------------
+
+## 添加文章统计功能
+
+在根目录下安装 hexo-wordcount 插件,运行下列命令
+``` bash
+npm install hexo-wordcount --save
+```
+打开next主题配置文档 \themes\next\_config.yml,搜索Post wordcount 字段，修改参数
+``` bash
+# Post wordcount display settings
+# Dependencies: https://github.com/willin/hexo-wordcount
+post_wordcount:
+  item_text: true
+  wordcount: true
+  min2read: true
+```
+
