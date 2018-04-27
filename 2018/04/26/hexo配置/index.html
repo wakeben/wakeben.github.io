@@ -89,14 +89,14 @@
 <meta name="description" content="开启站内搜索功能NexT 支持集成 Swiftype、 微搜索、Local Search 和 Algolia，各种搜索配置官方文档均有说明，但是尝试了一下只有本地搜索用着比较顺手 配置也简单，如下： 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令： 1npm install hexo-generator-searchdb --save">
 <meta name="keywords" content="hexo,配置,设置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo 设置">
-<meta property="og:url" content="http://yoursite.com/2018/04/26/hexo 设置/index.html">
+<meta property="og:title" content="hexo配置">
+<meta property="og:url" content="http://yoursite.com/2018/04/26/hexo配置/index.html">
 <meta property="og:site_name" content="运维菜鸟">
 <meta property="og:description" content="开启站内搜索功能NexT 支持集成 Swiftype、 微搜索、Local Search 和 Algolia，各种搜索配置官方文档均有说明，但是尝试了一下只有本地搜索用着比较顺手 配置也简单，如下： 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令： 1npm install hexo-generator-searchdb --save">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-27T08:17:27.385Z">
+<meta property="og:updated_time" content="2018-04-27T09:13:22.874Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo 设置">
+<meta name="twitter:title" content="hexo配置">
 <meta name="twitter:description" content="开启站内搜索功能NexT 支持集成 Swiftype、 微搜索、Local Search 和 Algolia，各种搜索配置官方文档均有说明，但是尝试了一下只有本地搜索用着比较顺手 配置也简单，如下： 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令： 1npm install hexo-generator-searchdb --save">
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/26/hexo 设置/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/26/hexo配置/"/>
 
 
 
 
 
-  <title>hexo 设置 | 运维菜鸟</title>
+  <title>hexo配置 | 运维菜鸟</title>
   
 
 
@@ -292,7 +292,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/hexo 设置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/hexo配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wakeben">
@@ -309,7 +309,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo 设置</h1>
+          <h1 class="post-title" itemprop="name headline">hexo配置</h1>
         
 
         <div class="post-meta">
@@ -418,8 +418,33 @@
 <p>生成的结构为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public/2018/04/27/Imgtest</span><br><span class="line">├── 111.jpg</span><br><span class="line">├── index.html</span><br><span class="line">├── 222.jpg</span><br><span class="line">└── 333.jpg</span><br></pre></td></tr></table></figure></p>
 <p>同时，生成的 html 是这样的</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=<span class="string">"/2018/04/27/imgtest/test.jpg"</span> alt=<span class="string">"test"</span>&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="添加版权声明模块"><a href="#添加版权声明模块" class="headerlink" title="添加版权声明模块"></a>添加版权声明模块</h2><p>Theme文件夹下的layout/_Marco/post.swig文件，这个和于layout下的post.swig的区别是前者扶着具体的post-content的生成，而后者是调用前者，然后补充类似comment第三方的模块的脚本。找到post-body所在的标签，并在其后加上如下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;    </span><br><span class="line"> &#123;<span class="comment"># 表示如果不在索引列表中加入后续的HTML代码 #&#125;</span></span><br><span class="line"> &#123;% <span class="keyword">if</span> not is_index %&#125;</span><br><span class="line">    &lt;ul class=<span class="string">"post-copyright"</span>&gt;</span><br><span class="line">      &lt;li class=<span class="string">"post-copyright-author"</span>&gt;</span><br><span class="line">          &lt;strong&gt;本文作者：&lt;/strong&gt;&#123;&#123; theme.author &#125;&#125;</span><br><span class="line">      &lt;/li&gt;</span><br><span class="line">      &lt;li class=<span class="string">"post-copyright-link"</span>&gt;</span><br><span class="line">        &lt;strong&gt;本文链接：&lt;/strong&gt;</span><br><span class="line">        &lt;a href=<span class="string">"&#123;&#123; url_for(page.path) &#125;&#125;"</span> title=<span class="string">"&#123;&#123; page.title &#125;&#125;"</span>&gt;&#123;&#123; page.path &#125;&#125;&lt;/a&gt;</span><br><span class="line">      &lt;/li&gt;</span><br><span class="line">      &lt;li class=<span class="string">"post-copyright-license"</span>&gt;</span><br><span class="line">        &lt;strong&gt;版权声明： &lt;/strong&gt;</span><br><span class="line">        本博客所有文章除特别声明外，均采用 &lt;a href=<span class="string">"http://creativecommons.org/licenses/by-nc-sa/3.0/cn/"</span> rel=<span class="string">"external nofollow"</span> target=<span class="string">"_blank"</span>&gt;CC BY-NC-SA 3.0 CN&lt;/a&gt; 许可协议。转载请注明出处！</span><br><span class="line">      &lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这样就生成了基础的HTML代码。类似theme.autor的变量，或从配置中读取或在运行时获取</p>
+<p>加上样式<br>定位到Next下的source/css/_custom/custom.styl,并在里面添加如下样式代码:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.post-copyright &#123;</span><br><span class="line">    margin: 2em 0 0;</span><br><span class="line">    padding: 0.5em 1em;</span><br><span class="line">    border-left: 3px solid <span class="comment">#ff1700;</span></span><br><span class="line">    background-color: <span class="comment">#f9f9f9;</span></span><br><span class="line">    list-style: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="修改底部-号标签"><a href="#修改底部-号标签" class="headerlink" title="修改底部#号标签"></a>修改底部#号标签</h2><p> 效果      #      →      <i class="fa fa-tag"></i><br>打开/themes/next/layout/_macro/post.swig </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rel=<span class="string">"tag"</span>&gt;<span class="comment">#       \\搜索rel="tag"&gt;#  将 # 换成 &lt;i class="fa fa-tag"&gt;&lt;/i&gt;</span></span><br><span class="line"></span><br><span class="line">rel=<span class="string">"tag"</span>&gt;&lt;i class=<span class="string">"fa fa-tag"</span>&gt;&lt;/i&gt;</span><br></pre></td></tr></table></figure>
       
     </div>
+    <div>    
+ 
+ 
+    <ul class="post-copyright">
+      <li class="post-copyright-author">
+          <strong>本文作者：</strong>Wakeben
+      </li>
+      <li class="post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="/2018/04/26/hexo配置/" title="hexo配置">2018/04/26/hexo配置/</a>
+      </li>
+      <li class="post-copyright-license">
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+      </li>
+    </ul>
+  
+</div>
     
     
     
@@ -440,11 +465,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
           
-            <a href="/tags/配置/" rel="tag"># 配置</a>
+            <a href="/tags/配置/" rel="tag"><i class="fa fa-tag"></i> 配置</a>
           
-            <a href="/tags/设置/" rel="tag"># 设置</a>
+            <a href="/tags/设置/" rel="tag"><i class="fa fa-tag"></i> 设置</a>
           
         </div>
       
@@ -605,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开启站内搜索功能"><span class="nav-number">1.</span> <span class="nav-text">开启站内搜索功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示摘要和阅读全文按钮"><span class="nav-number">2.</span> <span class="nav-text">显示摘要和阅读全文按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#站点建立时间"><span class="nav-number">3.</span> <span class="nav-text">站点建立时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置「动画效果」"><span class="nav-number">4.</span> <span class="nav-text">设置「动画效果」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码高亮主题"><span class="nav-number">5.</span> <span class="nav-text">代码高亮主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章插入本地图片"><span class="nav-number">6.</span> <span class="nav-text">文章插入本地图片</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开启站内搜索功能"><span class="nav-number">1.</span> <span class="nav-text">开启站内搜索功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示摘要和阅读全文按钮"><span class="nav-number">2.</span> <span class="nav-text">显示摘要和阅读全文按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#站点建立时间"><span class="nav-number">3.</span> <span class="nav-text">站点建立时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置「动画效果」"><span class="nav-number">4.</span> <span class="nav-text">设置「动画效果」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码高亮主题"><span class="nav-number">5.</span> <span class="nav-text">代码高亮主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章插入本地图片"><span class="nav-number">6.</span> <span class="nav-text">文章插入本地图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加版权声明模块"><span class="nav-number">7.</span> <span class="nav-text">添加版权声明模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改底部-号标签"><span class="nav-number">8.</span> <span class="nav-text">修改底部#号标签</span></a></li></ol></div>
             
 
           </div>

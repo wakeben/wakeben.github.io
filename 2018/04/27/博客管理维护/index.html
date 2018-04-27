@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="运维菜鸟">
 <meta property="og:description" content="搭建流程创建仓库，wakeben.github.io；创建两个分支：master 与 hexo；设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）；使用clone 命令拷贝仓库到本地；1git clone git@github.com:wakeben/wakeben.github.io.gitt">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-27T08:24:39.576Z">
+<meta property="og:updated_time" content="2018-04-27T08:48:32.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客管理">
 <meta name="twitter:description" content="搭建流程创建仓库，wakeben.github.io；创建两个分支：master 与 hexo；设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）；使用clone 命令拷贝仓库到本地；1git clone git@github.com:wakeben/wakeben.github.io.gitt">
@@ -392,12 +392,29 @@
 <hr>
 <h3 id="管理流程"><a href="#管理流程" class="headerlink" title="管理流程"></a>管理流程</h3><p>依次执行指令将改动推送到GitHub（此时当前分支应为hexo）；<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m “…”</span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure></p>
 <p>然后才执行hexo generate -d发布网站到master分支上。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate -d</span><br></pre></td></tr></table></figure></p>
-<p>本地资料丢失</p>
-<p>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
-<p>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:wakeben/wakeben.github.io.gitt拷贝仓库（默认分支为hexo）；<br>在本地新拷贝的CrazyMilk.github.io文件夹下通过Git bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</p>
+<h3 id="本地资料丢失"><a href="#本地资料丢失" class="headerlink" title="本地资料丢失"></a>本地资料丢失</h3><p>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
+<p>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:wakeben/wakeben.github.io.gitt拷贝仓库（默认分支为hexo）；<br>在本地新拷贝的CrazyMilk.github.io文件夹下通过Git bash依次执行下列指令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
+    <div>    
+ 
+ 
+    <ul class="post-copyright">
+      <li class="post-copyright-author">
+          <strong>本文作者：</strong>Wakeben
+      </li>
+      <li class="post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="/2018/04/27/博客管理维护/" title="博客管理">2018/04/27/博客管理维护/</a>
+      </li>
+      <li class="post-copyright-license">
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+      </li>
+    </ul>
+  
+</div>
     
     
     
@@ -418,9 +435,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
           
-            <a href="/tags/维护/" rel="tag"># 维护</a>
+            <a href="/tags/维护/" rel="tag"><i class="fa fa-tag"></i> 维护</a>
           
         </div>
       
@@ -577,7 +594,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建流程"><span class="nav-number">1.</span> <span class="nav-text">搭建流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管理流程"><span class="nav-number">2.</span> <span class="nav-text">管理流程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建流程"><span class="nav-number">1.</span> <span class="nav-text">搭建流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管理流程"><span class="nav-number">2.</span> <span class="nav-text">管理流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地资料丢失"><span class="nav-number">3.</span> <span class="nav-text">本地资料丢失</span></a></li></ol></div>
             
 
           </div>
