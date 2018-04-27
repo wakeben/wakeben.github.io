@@ -1,5 +1,5 @@
 ---
-title: hexo 设置
+title: hexo配置
 data: 2018-04-26 15:06
 tags: [hexo,配置,设置]
 categories: hexo配置
@@ -144,4 +144,56 @@ public/2018/04/27/Imgtest
 
 ``` bash
 <img src="/2018/04/27/imgtest/test.jpg" alt="test">
+```
+
+----------------------------------------------
+
+## 添加版权声明模块
+Theme文件夹下的layout/_Marco/post.swig文件，这个和于layout下的post.swig的区别是前者扶着具体的post-content的生成，而后者是调用前者，然后补充类似comment第三方的模块的脚本。找到post-body所在的标签，并在其后加上如下代码：
+``` bash
+<div>    
+ {# 表示如果不在索引列表中加入后续的HTML代码 #}
+ {% if not is_index %}
+    <ul class="post-copyright">
+      <li class="post-copyright-author">
+          <strong>本文作者：</strong>{{ theme.author }}
+      </li>
+      <li class="post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="{{ url_for(page.path) }}" title="{{ page.title }}">{{ page.path }}</a>
+      </li>
+      <li class="post-copyright-license">
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+      </li>
+    </ul>
+  {% endif %}
+</div>
+```
+
+这样就生成了基础的HTML代码。类似theme.autor的变量，或从配置中读取或在运行时获取
+
+加上样式
+定位到Next下的source/css/_custom/custom.styl,并在里面添加如下样式代码:
+``` bash
+.post-copyright {
+    margin: 2em 0 0;
+    padding: 0.5em 1em;
+    border-left: 3px solid #ff1700;
+    background-color: #f9f9f9;
+    list-style: none;
+}
+```
+
+
+----------------------------------------------
+## 修改底部#号标签
+
+ 效果      #      →      <i class="fa fa-tag"></i>
+打开/themes/next/layout/_macro/post.swig 
+
+``` bash 
+rel="tag">#       \\搜索rel="tag">#  将 # 换成 <i class="fa fa-tag"></i>
+
+rel="tag"><i class="fa fa-tag"></i> 
 ```
