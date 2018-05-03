@@ -3,6 +3,7 @@ title: hexo配置
 data: 2018-04-26 15:06
 tags: [hexo,配置,设置]
 categories: hexo配置
+copyright: true
 ---
 
 
@@ -148,45 +149,7 @@ public/2018/04/27/Imgtest
 
 ----------------------------------------------
 
-## 添加版权声明模块
-Theme文件夹下的layout/_Marco/post.swig文件，这个和于layout下的post.swig的区别是前者扶着具体的post-content的生成，而后者是调用前者，然后补充类似comment第三方的模块的脚本。找到post-body所在的标签，并在其后加上如下代码：
-``` bash
-<div>    
- {# 表示如果不在索引列表中加入后续的HTML代码 #}
- {% if not is_index %}
-    <ul class="post-copyright">
-      <li class="post-copyright-author">
-          <strong>本文作者：</strong>{{ theme.author }}
-      </li>
-      <li class="post-copyright-link">
-        <strong>本文链接：</strong>
-        <a href="{{ url_for(page.path) }}" title="{{ page.title }}">{{ page.path }}</a>
-      </li>
-      <li class="post-copyright-license">
-        <strong>版权声明： </strong>
-        本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
-      </li>
-    </ul>
-  {% endif %}
-</div>
-```
 
-这样就生成了基础的HTML代码。类似theme.autor的变量，或从配置中读取或在运行时获取
-
-加上样式
-定位到Next下的source/css/_custom/custom.styl,并在里面添加如下样式代码:
-``` bash
-.post-copyright {
-    margin: 2em 0 0;
-    padding: 0.5em 1em;
-    border-left: 3px solid #ff1700;
-    background-color: #f9f9f9;
-    list-style: none;
-}
-```
-
-
-----------------------------------------------
 ## 修改底部#号标签
 
  效果      #      →      <i class="fa fa-tag"></i>
@@ -236,5 +199,242 @@ post_wordcount:
   item_text: true
   wordcount: true
   min2read: true
+```
+
+----------------------------------------------------
+## 文末结束标记
+打开    \themes\next\layout\_macro 
+
+新建文件 passage-end-tag.swig
+
+添加下列内容
+``` bash
+{% if theme.passage_end_tag.enabled %}
+<div style="text-align:center;color: #ccc;font-size:16px;"><br/><br/><br/>
+-------------本文结束， 感谢您的阅读！-------------</div>
+<br/>
+```
+
+打开 \themes\next\layout\_macro\post.swig
+查找 wechat  在此前插入下列代码， 在337行处
+``` bash
+  <div>
+  {% if not is_index %}
+    {% include 'passage-end-tag.swig' %}
+  {% endif %}
+</div>
+```
+
+打开 \themes\next\_config.yml 在合适位置添加下列代码
+
+``` bash
+文章末尾添加“本文结束”标记
+passage_end_tag:
+  enabled: true
+```
+----------------------------------------------
+## 主页文章添加阴影效果
+打开\themes\next\source\css\_custom\custom.styl ,添加下列代码
+``` bash
+/ 主页文章添加阴影效果
+ .post {
+   margin-top: 60px;
+   margin-bottom: 60px;
+   padding: 25px;
+   -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);
+   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);
+  }
+```
+
+----------------------------------------------
+## 底部增加版权信息  - 第一种
+Theme文件夹下的layout/_Marco/post.swig文件，这个和于layout下的post.swig的区别是前者扶着具体的post-content的生成，而后者是调用前者，然后补充类似comment第三方的模块的脚本。找到post-body所在的标签，并在其后加上如下代码：
+``` bash
+<div>    
+ {# 表示如果不在索引列表中加入后续的HTML代码 #}
+ {% if not is_index %}
+    <ul class="post-copyright">
+      <li class="post-copyright-author">
+          <strong>本文作者：</strong>{{ theme.author }}
+      </li>
+      <li class="post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="{{ url_for(page.path) }}" title="{{ page.title }}">{{ page.path }}</a>
+      </li>
+      <li class="post-copyright-license">
+        <strong>版权声明： </strong>
+        本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+      </li>
+    </ul>
+  {% endif %}
+</div>
+```
+
+这样就生成了基础的HTML代码。类似theme.autor的变量，或从配置中读取或在运行时获取
+
+加上样式
+定位到Next下的source/css/_custom/custom.styl,并在里面添加如下样式代码:
+``` bash
+.post-copyright {
+    margin: 2em 0 0;
+    padding: 0.5em 1em;
+    border-left: 3px solid #ff1700;
+    background-color: #f9f9f9;
+    list-style: none;
+}
+```
+
+
+----------------------------------------------
+## 底部增加版权信息  - 第二种
+在目录 next/layout/_macro/下添加 my-copyright.swig 文件。内容如下
+``` bash
+{% if page.copyright %}
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="{{ url_for(page.path) }}">{{ page.title }}</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 {{ theme.author }} 的个人博客">{{ theme.author }}</a></p>
+  <p><span>发布时间:</span>{{ page.date.format("YYYY年MM月DD日 - HH:MM") }}</p>
+  <p><span>最后更新:</span>{{ page.updated.format("YYYY年MM月DD日 - HH:MM") }}</p>
+  <p><span>原始链接:</span><a href="{{ url_for(page.path) }}" title="{{ page.title }}">{{ page.permalink }}</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="{{ page.permalink }}"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+{% endif %}
+```
+
+在目录next/source/css/_common/components/post/下添加my-post-copyright.styl 文件 内容如下
+``` bash
+.my_post_copyright {
+  width: 85%;
+  max-width: 45em;
+  margin: 2.8em auto 0;
+  padding: 0.5em 1.0em;
+  border: 1px solid #d3d3d3;
+  font-size: 0.93rem;
+  line-height: 1.6em;
+  word-break: break-all;
+  background: rgba(255,255,255,0.4);
+}
+.my_post_copyright p{margin:0;}
+.my_post_copyright span {
+  display: inline-block;
+  width: 5.2em;
+  color: #b5b5b5;
+  font-weight: bold;
+}
+.my_post_copyright .raw {
+  margin-left: 1em;
+  width: 5em;
+}
+.my_post_copyright a {
+  color: #808080;
+  border-bottom:0;
+}
+.my_post_copyright a:hover {
+  color: #a3d2a3;
+  text-decoration: underline;
+}
+.my_post_copyright:hover .fa-clipboard {
+  color: #000;
+}
+.my_post_copyright .post-url:hover {
+  font-weight: normal;
+}
+.my_post_copyright .copy-path {
+  margin-left: 1em;
+  width: 1em;
+  +mobile(){display:none;}
+}
+.my_post_copyright .copy-path:hover {
+  color: #808080;
+  cursor: pointer;
+}
+```
+修改next/layout/_macro/post.swig，在代码
+``` bash
+<div>
+      {% if not is_index %}
+        {% include 'wechat-subscriber.swig' %}
+      {% endif %}
+</div>
+```
+之前添加增加如下代码：
+``` bash
+<div>
+      {% if not is_index %}
+        {% include 'my-copyright.swig' %}
+      {% endif %}
+</div>
+```
+
+修改next/source/css/_common/components/post/post.styl文件，在最后一行增加代码：
+``` bash
+@import "my-post-copyright"
+```
+
+保存重新生成即可。
+如果要在该博文下面增加版权信息的显示，需要在 Markdown 中增加copyright: true的设置，类似：
+
+``` bash
+---
+title: hexo设置
+date: 2018-04-29 22:53:53
+tags: hexo设置
+categories: hexo设置
+copyright: true
+---
+```
+
+------------------------------------------
+
+## 修改博客页宽
+打开　\themes\next\source\css\_variables\custom.styl 添加下列内容
+``` bash
+$main-desktop                   = 1200px
+$content-desktop                = 900px
+```
+
+----------------------------------------------
+## 分割线样式修改
+
+打开　\themes\next\source\css\_common\scaffolding\base.styl
+
+注释下列内容
+``` bash
+  #background-image: repeating-linear-gradient(
+  #  -45deg,
+  #  white,
+  #  white 4px,
+  #  transparent 4px,
+  #  transparent 8px
+  #);
+```
+
+添加下列内容
+``` bash
+hr {
+  margin: 20px 20px;
+  height: 3px;
+  background-color: #002661;
+}
 ```
 
