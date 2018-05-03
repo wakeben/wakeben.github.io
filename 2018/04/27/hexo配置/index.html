@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="hexo,配置,设置," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -87,14 +87,13 @@
 
 
 <meta name="description" content="开启站内搜索功能NexT 支持集成 Swiftype、 微搜索、Local Search 和 Algolia，各种搜索配置官方文档均有说明，但是尝试了一下只有本地搜索用着比较顺手 配置也简单，如下： 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令： 1npm install hexo-generator-searchdb --save">
-<meta name="keywords" content="hexo,配置,设置">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo配置">
 <meta property="og:url" content="http://yoursite.com/2018/04/27/hexo配置/index.html">
 <meta property="og:site_name" content="运维菜鸟">
 <meta property="og:description" content="开启站内搜索功能NexT 支持集成 Swiftype、 微搜索、Local Search 和 Algolia，各种搜索配置官方文档均有说明，但是尝试了一下只有本地搜索用着比较顺手 配置也简单，如下： 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令： 1npm install hexo-generator-searchdb --save">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-03T08:06:23.223Z">
+<meta property="og:updated_time" content="2018-05-03T09:20:57.854Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo配置">
 <meta name="twitter:description" content="开启站内搜索功能NexT 支持集成 Swiftype、 微搜索、Local Search 和 Algolia，各种搜索配置官方文档均有说明，但是尝试了一下只有本地搜索用着比较顺手 配置也简单，如下： 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令： 1npm install hexo-generator-searchdb --save">
@@ -200,22 +199,6 @@
           <a href="/categories/" rel="section">
             
             分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-            归档
           </a>
         </li>
       
@@ -344,8 +327,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo配置/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo配置</span>
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/配置/" itemprop="url" rel="index">
+                    <span itemprop="name">配置</span>
                   </a>
                 </span>
 
@@ -377,7 +371,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,157
+                  2,154
                 </span>
               
 
@@ -474,7 +468,7 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
 <hr>
 <h2 id="主页文章添加阴影效果"><a href="#主页文章添加阴影效果" class="headerlink" title="主页文章添加阴影效果"></a>主页文章添加阴影效果</h2><p>打开\themes\next\source\css_custom\custom.styl ,添加下列代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/ 主页文章添加阴影效果</span><br><span class="line"> .post &#123;</span><br><span class="line">   margin-top: 60px;</span><br><span class="line">   margin-bottom: 60px;</span><br><span class="line">   padding: 25px;</span><br><span class="line">   -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);</span><br><span class="line">   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
 <hr>
-<h2 id="底部增加版权信息-第一种"><a href="#底部增加版权信息-第一种" class="headerlink" title="底部增加版权信息  - 第一种"></a>底部增加版权信息  - 第一种</h2><p>Theme文件夹下的layout/_Marco/post.swig文件，这个和于layout下的post.swig的区别是前者扶着具体的post-content的生成，而后者是调用前者，然后补充类似comment第三方的模块的脚本。找到post-body所在的标签，并在其后加上如下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;    </span><br><span class="line"> &#123;<span class="comment"># 表示如果不在索引列表中加入后续的HTML代码 #&#125;</span></span><br><span class="line"> &#123;% <span class="keyword">if</span> not is_index %&#125;</span><br><span class="line">    &lt;ul class=<span class="string">"post-copyright"</span>&gt;</span><br><span class="line">      &lt;li class=<span class="string">"post-copyright-author"</span>&gt;</span><br><span class="line">          &lt;strong&gt;本文作者：&lt;/strong&gt;&#123;&#123; theme.author &#125;&#125;</span><br><span class="line">      &lt;/li&gt;</span><br><span class="line">      &lt;li class=<span class="string">"post-copyright-link"</span>&gt;</span><br><span class="line">        &lt;strong&gt;本文链接：&lt;/strong&gt;</span><br><span class="line">        &lt;a href=<span class="string">"&#123;&#123; url_for(page.path) &#125;&#125;"</span> title=<span class="string">"&#123;&#123; page.title &#125;&#125;"</span>&gt;&#123;&#123; page.path &#125;&#125;&lt;/a&gt;</span><br><span class="line">      &lt;/li&gt;</span><br><span class="line">      &lt;li class=<span class="string">"post-copyright-license"</span>&gt;</span><br><span class="line">        &lt;strong&gt;版权声明： &lt;/strong&gt;</span><br><span class="line">        本博客所有文章除特别声明外，均采用 &lt;a href=<span class="string">"http://creativecommons.org/licenses/by-nc-sa/3.0/cn/"</span> rel=<span class="string">"external nofollow"</span> target=<span class="string">"_blank"</span>&gt;CC BY-NC-SA 3.0 CN&lt;/a&gt; 许可协议。转载请注明出处！</span><br><span class="line">      &lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="底部增加版权信息-第一种"><a href="#底部增加版权信息-第一种" class="headerlink" title="底部增加版权信息  - 第一种"></a>底部增加版权信息  - 第一种</h2><p>Themes/next/layout/_Marco/post.swig文件，这个和于layout下的post.swig的区别是前者扶着具体的post-content的生成，而后者是调用前者，然后补充类似comment第三方的模块的脚本。找到post-body所在的标签，并在其后加上如下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;    </span><br><span class="line"> &#123;<span class="comment"># 表示如果不在索引列表中加入后续的HTML代码 #&#125;</span></span><br><span class="line"> &#123;% <span class="keyword">if</span> not is_index %&#125;</span><br><span class="line">    &lt;ul class=<span class="string">"post-copyright"</span>&gt;</span><br><span class="line">      &lt;li class=<span class="string">"post-copyright-author"</span>&gt;</span><br><span class="line">          &lt;strong&gt;本文作者：&lt;/strong&gt;&#123;&#123; theme.author &#125;&#125;</span><br><span class="line">      &lt;/li&gt;</span><br><span class="line">      &lt;li class=<span class="string">"post-copyright-link"</span>&gt;</span><br><span class="line">        &lt;strong&gt;本文链接：&lt;/strong&gt;</span><br><span class="line">        &lt;a href=<span class="string">"&#123;&#123; url_for(page.path) &#125;&#125;"</span> title=<span class="string">"&#123;&#123; page.title &#125;&#125;"</span>&gt;&#123;&#123; page.path &#125;&#125;&lt;/a&gt;</span><br><span class="line">      &lt;/li&gt;</span><br><span class="line">      &lt;li class=<span class="string">"post-copyright-license"</span>&gt;</span><br><span class="line">        &lt;strong&gt;版权声明： &lt;/strong&gt;</span><br><span class="line">        本博客所有文章除特别声明外，均采用 &lt;a href=<span class="string">"http://creativecommons.org/licenses/by-nc-sa/3.0/cn/"</span> rel=<span class="string">"external nofollow"</span> target=<span class="string">"_blank"</span>&gt;CC BY-NC-SA 3.0 CN&lt;/a&gt; 许可协议。转载请注明出处！</span><br><span class="line">      &lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 <p>这样就生成了基础的HTML代码。类似theme.autor的变量，或从配置中读取或在运行时获取</p>
 <p>加上样式<br>定位到Next下的source/css/_custom/custom.styl,并在里面添加如下样式代码:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.post-copyright &#123;</span><br><span class="line">    margin: 2em 0 0;</span><br><span class="line">    padding: 0.5em 1em;</span><br><span class="line">    border-left: 3px solid <span class="comment">#ff1700;</span></span><br><span class="line">    background-color: <span class="comment">#f9f9f9;</span></span><br><span class="line">    list-style: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <hr>
@@ -494,22 +488,12 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
 
       
     </div>
-    <div>    
- 
- 
-    <ul class="post-copyright">
-      <li class="post-copyright-author">
-          <strong>本文作者：</strong>Wakeben
-      </li>
-      <li class="post-copyright-link">
-        <strong>本文链接：</strong>
-        <a href="/2018/04/27/hexo配置/" title="hexo配置">2018/04/27/hexo配置/</a>
-      </li>
-      <li class="post-copyright-license">
-        <strong>版权声明： </strong>
-        本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
-      </li>
-    </ul>
+  <div>
+  
+    
+<div style="text-align:center;color: #ccc;font-size:16px;"><br/><br/><br/>
+-------------本文结束， 感谢您的阅读！-------------</div>
+<br/>
   
 </div>
     
@@ -529,7 +513,7 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
   <p><span>本文标题:</span><a href="/2018/04/27/hexo配置/">hexo配置</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Wakeben 的个人博客">Wakeben</a></p>
   <p><span>发布时间:</span>2018年04月27日 - 21:04</p>
-  <p><span>最后更新:</span>2018年05月03日 - 16:05</p>
+  <p><span>最后更新:</span>2018年05月03日 - 17:05</p>
   <p><span>原始链接:</span><a href="/2018/04/27/hexo配置/" title="hexo配置">http://yoursite.com/2018/04/27/hexo配置/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/04/27/hexo配置/"  aria-label="复制成功！"></i></span>
   </p>
@@ -561,16 +545,6 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
-          
-            <a href="/tags/配置/" rel="tag"><i class="fa fa-tag"></i> 配置</a>
-          
-            <a href="/tags/设置/" rel="tag"><i class="fa fa-tag"></i> 设置</a>
-          
-        </div>
-      
 
       
       
@@ -580,8 +554,8 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/27/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/04/27/博客管理维护/" rel="next" title="博客管理">
+                <i class="fa fa-chevron-left"></i> 博客管理
               </a>
             
           </div>
@@ -590,8 +564,8 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/27/hexo配置1/" rel="prev" title="hexo配置1">
-                hexo配置1 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/27/Git命令/" rel="prev" title="Git命令">
+                Git命令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -671,9 +645,9 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -684,7 +658,7 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
