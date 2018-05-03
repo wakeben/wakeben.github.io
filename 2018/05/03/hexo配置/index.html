@@ -89,14 +89,18 @@
 <meta name="description" content="开启站内搜索功能NexT 支持集成 Swiftype、 微搜索、Local Search 和 Algolia，各种搜索配置官方文档均有说明，但是尝试了一下只有本地搜索用着比较顺手 配置也简单，如下： 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令： 1npm install hexo-generator-searchdb --save">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo配置">
-<meta property="og:url" content="http://yoursite.com/2018/04/27/hexo配置/index.html">
+<meta property="og:url" content="http://wakeben.github.io/2018/05/03/hexo配置/index.html">
 <meta property="og:site_name" content="运维菜鸟">
 <meta property="og:description" content="开启站内搜索功能NexT 支持集成 Swiftype、 微搜索、Local Search 和 Algolia，各种搜索配置官方文档均有说明，但是尝试了一下只有本地搜索用着比较顺手 配置也简单，如下： 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令： 1npm install hexo-generator-searchdb --save">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-03T09:20:57.854Z">
+<meta property="og:image" content="http://wakeben.github.io/2018/05/03/hexo配置/111.png">
+<meta property="og:image" content="http://wakeben.github.io/2018/05/03/hexo配置/333.png">
+<meta property="og:image" content="http://wakeben.github.io/2018/05/03/hexo配置/222.png">
+<meta property="og:updated_time" content="2018-05-03T11:20:15.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo配置">
 <meta name="twitter:description" content="开启站内搜索功能NexT 支持集成 Swiftype、 微搜索、Local Search 和 Algolia，各种搜索配置官方文档均有说明，但是尝试了一下只有本地搜索用着比较顺手 配置也简单，如下： 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令： 1npm install hexo-generator-searchdb --save">
+<meta name="twitter:image" content="http://wakeben.github.io/2018/05/03/hexo配置/111.png">
 
 
 
@@ -126,7 +130,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/27/hexo配置/"/>
+  <link rel="canonical" href="http://wakeben.github.io/2018/05/03/hexo配置/"/>
 
 
 
@@ -275,7 +279,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/hexo配置/">
+    <link itemprop="mainEntityOfPage" href="http://wakeben.github.io/2018/05/03/hexo配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wakeben">
@@ -304,8 +308,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T21:04:45+08:00">
-                2018-04-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T19:07:49+08:00">
+                2018-05-03
               </time>
             
 
@@ -371,7 +375,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,154
+                  2,249
                 </span>
               
 
@@ -387,7 +391,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10
+                  11
                 </span>
               
             </div>
@@ -441,7 +445,7 @@
 <p>安装完成以后，重新启动hexo ，新建一个post 这时在\source_posts下会产生和MD文件同名的文件夹</p>
 <p>假设在<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Imgtest</span><br><span class="line">├── 111.jpg</span><br><span class="line">├── 222.jpg</span><br><span class="line">└── 333.jpg</span><br><span class="line">Imgtest.md</span><br></pre></td></tr></table></figure></p>
 <p>这样的目录结构（目录名和文章名一致），只要使用下列命令就可以插入图片。</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![111](Imgtest/111.jpg)</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![111](/hexo配置/111.png)</span><br></pre></td></tr></table></figure>
 <p>生成的结构为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public/2018/04/27/Imgtest</span><br><span class="line">├── 111.jpg</span><br><span class="line">├── index.html</span><br><span class="line">├── 222.jpg</span><br><span class="line">└── 333.jpg</span><br></pre></td></tr></table></figure></p>
 <p>同时，生成的 html 是这样的</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=<span class="string">"/2018/04/27/imgtest/test.jpg"</span> alt=<span class="string">"test"</span>&gt;</span><br></pre></td></tr></table></figure>
@@ -479,6 +483,10 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
 <p>修改next/source/css/_common/components/post/post.styl文件，在最后一行增加代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import <span class="string">"my-post-copyright"</span></span><br></pre></td></tr></table></figure></p>
 <p>保存重新生成即可。<br>如果要在该博文下面增加版权信息的显示，需要在 Markdown 中增加copyright: true的设置，类似：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo设置</span><br><span class="line">date: 2018-04-29 22:53:53</span><br><span class="line">tags: hexo设置</span><br><span class="line">categories: hexo设置</span><br><span class="line">copyright: <span class="literal">true</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>如果你觉得每次都要输入copyright: true很麻烦的话,那么在/scaffolds/post.md文件中添加： </p>
+<p><img src="/2018/05/03/hexo配置/111.png" alt="111"><br>这样每次hexo new “你的内容”之后，生成的md文件会自动把copyright:加到里面去 </p>
+<p>(注意：如果解析出来之后，你的原始链接有问题：如下图，yoursite.com<br><img src="/2018/05/03/hexo配置/333.png" alt="333"></p>
+<p>需要在主配置文件修改URL 地址<br><img src="/2018/05/03/hexo配置/222.png" alt="222"></p>
 <hr>
 <h2 id="修改博客页宽"><a href="#修改博客页宽" class="headerlink" title="修改博客页宽"></a>修改博客页宽</h2><p>打开　\themes\next\source\css_variables\custom.styl 添加下列内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$main</span>-desktop                   = 1200px</span><br><span class="line"><span class="variable">$content</span>-desktop                = 900px</span><br></pre></td></tr></table></figure></p>
 <hr>
@@ -510,12 +518,12 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
   <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2018/04/27/hexo配置/">hexo配置</a></p>
+  <p><span>本文标题:</span><a href="/2018/05/03/hexo配置/">hexo配置</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Wakeben 的个人博客">Wakeben</a></p>
-  <p><span>发布时间:</span>2018年04月27日 - 21:04</p>
-  <p><span>最后更新:</span>2018年05月03日 - 17:05</p>
-  <p><span>原始链接:</span><a href="/2018/04/27/hexo配置/" title="hexo配置">http://yoursite.com/2018/04/27/hexo配置/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/04/27/hexo配置/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年05月03日 - 19:05</p>
+  <p><span>最后更新:</span>2018年05月03日 - 19:05</p>
+  <p><span>原始链接:</span><a href="/2018/05/03/hexo配置/" title="hexo配置">http://wakeben.github.io/2018/05/03/hexo配置/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://wakeben.github.io/2018/05/03/hexo配置/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -554,8 +562,8 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/27/博客管理维护/" rel="next" title="博客管理">
-                <i class="fa fa-chevron-left"></i> 博客管理
+              <a href="/2018/05/03/MarkdownPad 2 Pro 注册码/" rel="next" title="MarkdownPad 2 Pro 注册码">
+                <i class="fa fa-chevron-left"></i> MarkdownPad 2 Pro 注册码
               </a>
             
           </div>
@@ -563,10 +571,6 @@ Pisces： 双栏 Scheme，小家碧玉似的清新
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/27/Git命令/" rel="prev" title="Git命令">
-                Git命令 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
